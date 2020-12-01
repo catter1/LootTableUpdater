@@ -87,8 +87,12 @@ for file in jsonfiles:
 #Finally, writes the new lines into given json file, replacing the old text.
     with open(file, 'w') as f_out:
         f_out.writelines(newlines)
+        print("Success!")
         if len(index) != 0:
-            print(f"Success! Added a TYPE for {len(index)} instances of COUNT in {file}.")
+            print(f"Added a TYPE for {len(index)} instances of COUNT in {file}.")
+        else:
+            if singlefile:
+                print("No changes were to be made.")
 
 
 ###OLD CODE###
