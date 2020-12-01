@@ -1,3 +1,9 @@
+#Copyright (c) 2020, catter1
+#All rights reserved.
+#
+#This source code is licensed under the BSD-style license found in the
+#LICENSE file in the root directory of this source tree. 
+
 import json, sys, os
 
 #Declaring Variables
@@ -87,12 +93,13 @@ for file in jsonfiles:
 #Finally, writes the new lines into given json file, replacing the old text.
     with open(file, 'w') as f_out:
         f_out.writelines(newlines)
-        print("Success!")
+        print("File viewed successfully!")
         if len(index) != 0:
             print(f"Added a TYPE for {len(index)} instances of COUNT in {file}.")
-        else:
-            if singlefile:
-                print("No changes were to be made.")
+            success = True
+
+if not success:
+    print("No changes were to be made.")
 
 
 ###OLD CODE###
