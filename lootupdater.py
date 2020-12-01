@@ -12,6 +12,8 @@ try:
 except IndexError as err:
     print("Please define a file to modify.")
     sys.exit()
+else:
+    jsonfiles.append(file)
 
 #Function to get list of valid files in the directory if they seleced "all".
 def filter_files():
@@ -85,7 +87,8 @@ for file in jsonfiles:
 #Finally, writes the new lines into given json file, replacing the old text.
     with open(file, 'w') as f_out:
         f_out.writelines(newlines)
-        print(f"Success! Added a TYPE for {len(index)} instances of COUNT in {file}.")
+        if len(index) != 0:
+            print(f"Success! Added a TYPE for {len(index)} instances of COUNT in {file}.")
 
 
 ###OLD CODE###
